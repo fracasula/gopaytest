@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Payments API</title>
+                                                         </head>
+<body>
+<div class="container">
+    <h1>Payments API</h1>
+    <p class="sw-info">
+        Base URL: <span class="sw-info-basePath">/v1</span>,
+        Version: <span class="sw-info-version">1.0.0</span>
+    </p>
+    <p><p>gopaytest code test payments API</p>
+    </p>
+    
+        <div id="sw-default-consumes" class="sw-default-value">
+            <span class="sw-default-value-header">Default request content-types:</span>
+            application/json
+        </div>
+        <div id="sw-default-produces" class="sw-default-value">
+            <span class="sw-default-value-header">Default response content-types:</span>
+            application/json
+        </div>
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        https
+    </div>
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        <table class="table table-bordered table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="2">
+                                <a href="#path--payments-">/payments/</a>
+                            </td>
+                        <td>
+                            <a href="#operation--payments--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Get the list of Payments</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--payments--post">POST</a>
+                        </td>
+                        <td>
+                            <p>Create a Payment</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="3">
+                                <a href="#path--payments--paymentId-">/payments/{paymentId}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--payments--paymentId--delete">DELETE</a>
+                        </td>
+                        <td>
+                            <p>Delete a Payment</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--payments--paymentId--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Load an individual Payment</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--payments--paymentId--put">PUT</a>
+                        </td>
+                        <td>
+                            <p>Update a Payment</p>
+        
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    
+    
+        <h2>Security</h2>
+    
+            <div id="security-definition-None" class="panel panel-security-definition panel-security-definition-">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="security-name">None</span></h3>
+                    Type: 
+                </div>
+                <div class="panel-body">                
+                    <section class="sw-security-properties">
+                        <dl>                
+                            <dt class="security-property-name">Description:</dt>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p><p>This API is not secured, it&#39;s not meant to be exposed outside of the cluster. Authentication should be handled via another API (e.g. API Gateway).</p>
+    </p></div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </section>                
+                </div>
+            </div>        
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--payments-"></span>
+            <div id="operation--payments--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Get the list of Payments</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/payments/</strong></h3>
+                        Tags:
+                            <a href="#tag-Payments">Payments</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Loads a list of Payments</p>
+            
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                $size
+                                            </td>
+                                            <td><p>Size of the page to retrieve.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                $page
+                                            </td>
+                                            <td><p>Number of the page to retrieve.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                </p>
+                            
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 200</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-6 sw-response-examples">
+                                                        <div class="label label-default">Example for application/json</div>
+                                                        <pre>{<br>    "<span class="hljs-attribute">data</span>": <span class="hljs-value">[<br>        {<br>            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Payment"</span></span>,<br>            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4ee3a8d8-ca7b-4290-a52c-dd5b6165ec43"</span></span>,<br>            "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,<br>            "<span class="hljs-attribute">organisation_id</span>": <span class="hljs-value"><span class="hljs-string">"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb"</span></span>,<br>            "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"100.21"</span></span>,<br>                "<span class="hljs-attribute">beneficiary_party</span>": <span class="hljs-value">{<br>                    "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"W Owens"</span></span>,<br>                    "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"31926819"</span></span>,<br>                    "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"BBAN"</span></span>,<br>                    "<span class="hljs-attribute">account_type</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,<br>                    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"1 The Beneficiary Localtown SE2"</span></span>,<br>                    "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"403000"</span></span>,<br>                    "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wilfred Jeremiah Owens"</span><br>                </span>}</span>,<br>                "<span class="hljs-attribute">charges_information</span>": <span class="hljs-value">{<br>                    "<span class="hljs-attribute">bearer_code</span>": <span class="hljs-value"><span class="hljs-string">"SHAR"</span></span>,<br>                    "<span class="hljs-attribute">sender_charges</span>": <span class="hljs-value">[<br>                        {<br>                            "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"5.00"</span></span>,<br>                            "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span><br>                        </span>},<br>                        {<br>                            "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"10.00"</span></span>,<br>                            "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>                        </span>}<br>                    ]</span>,<br>                    "<span class="hljs-attribute">receiver_charges_amount</span>": <span class="hljs-value"><span class="hljs-string">"1.00"</span></span>,<br>                    "<span class="hljs-attribute">receiver_charges_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>                </span>}</span>,<br>                "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span></span>,<br>                "<span class="hljs-attribute">debtor_party</span>": <span class="hljs-value">{<br>                    "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"EJ Brown Black"</span></span>,<br>                    "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"GB29XABC10161234567801"</span></span>,<br>                    "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"IBAN"</span></span>,<br>                    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10 Debtor Crescent Sourcetown NE1"</span></span>,<br>                    "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"203301"</span></span>,<br>                    "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Emelia Jane Brown"</span><br>                </span>}</span>,<br>                "<span class="hljs-attribute">end_to_end_reference</span>": <span class="hljs-value"><span class="hljs-string">"Wil piano Jan"</span></span>,<br>                "<span class="hljs-attribute">fx</span>": <span class="hljs-value">{<br>                    "<span class="hljs-attribute">contract_reference</span>": <span class="hljs-value"><span class="hljs-string">"FX123"</span></span>,<br>                    "<span class="hljs-attribute">exchange_rate</span>": <span class="hljs-value"><span class="hljs-string">"2.00000"</span></span>,<br>                    "<span class="hljs-attribute">original_amount</span>": <span class="hljs-value"><span class="hljs-string">"200.42"</span></span>,<br>                    "<span class="hljs-attribute">original_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>                </span>}</span>,<br>                "<span class="hljs-attribute">numeric_reference</span>": <span class="hljs-value"><span class="hljs-string">"1002001"</span></span>,<br>                "<span class="hljs-attribute">payment_id</span>": <span class="hljs-value"><span class="hljs-string">"123456789012345678"</span></span>,<br>                "<span class="hljs-attribute">payment_purpose</span>": <span class="hljs-value"><span class="hljs-string">"Paying for goods/services"</span></span>,<br>                "<span class="hljs-attribute">payment_scheme</span>": <span class="hljs-value"><span class="hljs-string">"FPS"</span></span>,<br>                "<span class="hljs-attribute">payment_type</span>": <span class="hljs-value"><span class="hljs-string">"Credit"</span></span>,<br>                "<span class="hljs-attribute">processing_date</span>": <span class="hljs-value"><span class="hljs-string">"2017-01-18"</span></span>,<br>                "<span class="hljs-attribute">reference</span>": <span class="hljs-value"><span class="hljs-string">"Payment for Em's piano lessons"</span></span>,<br>                "<span class="hljs-attribute">scheme_payment_sub_type</span>": <span class="hljs-value"><span class="hljs-string">"InternetBanking"</span></span>,<br>                "<span class="hljs-attribute">scheme_payment_type</span>": <span class="hljs-value"><span class="hljs-string">"ImmediatePayment"</span></span>,<br>                "<span class="hljs-attribute">sponsor_party</span>": <span class="hljs-value">{<br>                    "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"56781234"</span></span>,<br>                    "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"123123"</span></span>,<br>                    "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span><br>                </span>}<br>            </span>}<br>        </span>}<br>    ]</span>,<br>    "<span class="hljs-attribute">links</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">self</span>": <span class="hljs-value"><span class="hljs-string">"https://api.test.gopaytest.tech/v1/payments"</span><br>    </span>}<br></span>}<br></pre>
+                                                    </div>
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Payment">Payment</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                                    <div class="col-md-12">
+                                                        <section class="sw-response-headers">
+                                                            <table class="table">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="sw-response-header-name"></th>
+                                                                    <th class="sw-response-header-description"></th>
+                                                                    <th class="sw-response-header-data-type"></th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                        <tr class="sw-response-header-X-Page-Count">
+                                                                            <td>
+                                                                                X-Page-Count
+                                                                            <td></td>
+                                                                            <td>
+                                                                                
+                                                                                <span class="json-property-type">integer</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="sw-response-header-X-Page-Number">
+                                                                            <td>
+                                                                                X-Page-Number
+                                                                            <td></td>
+                                                                            <td>
+                                                                                
+                                                                                <span class="json-property-type">integer</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="sw-response-header-X-Page-Size">
+                                                                            <td>
+                                                                                X-Page-Size
+                                                                            <td></td>
+                                                                            <td>
+                                                                                
+                                                                                <span class="json-property-type">integer</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="sw-response-header-X-Total-Count">
+                                                                            <td>
+                                                                                X-Total-Count
+                                                                            <td></td>
+                                                                            <td>
+                                                                                
+                                                                                <span class="json-property-type">integer</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </section>
+                                                    </div>
+                                            </div>                </dd>
+                                    <dt class="sw-response-500">
+                                        500 Internal Server Error
+                                    
+                                    </dt>
+                                    <dd class="sw-response-500">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 500</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--payments--post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Create a Payment</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/payments/</strong></h3>
+                        Tags:
+                            <a href="#tag-Payments">Payments</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Adds a Payment</p>
+            
+                    </section>
+            
+                        
+                            <section class="sw-request-body">
+                                
+                                    <p><a href="#sw-default-consumes">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                    </p>
+                                                <div class="row">
+                                            <div class="col-md-6">
+                                                <p></p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+                                            <a class="json-schema-ref" href="#/definitions/Payment">Payment</a>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>        
+                    
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                </p>
+                            
+                            <dl>
+                                    <dt class="sw-response-201">
+                                        201 Created
+                                    
+                                    </dt>
+                                    <dd class="sw-response-201">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 201</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-6 sw-response-examples">
+                                                        <div class="label label-default">Example for application/json</div>
+                                                        <pre>{<br>    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Payment"</span></span>,<br>        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"cca3b50b-4acb-43dd-8465-8e7d6eac2cac"</span></span>,<br>        "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,<br>        "<span class="hljs-attribute">organisation_id</span>": <span class="hljs-value"><span class="hljs-string">"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb"</span></span>,<br>        "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{<br>            "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"100.21"</span></span>,<br>            "<span class="hljs-attribute">beneficiary_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"W Owens"</span></span>,<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"31926819"</span></span>,<br>                "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"BBAN"</span></span>,<br>                "<span class="hljs-attribute">account_type</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,<br>                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"1 The Beneficiary Localtown SE2"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"403000"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wilfred Jeremiah Owens"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">charges_information</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">bearer_code</span>": <span class="hljs-value"><span class="hljs-string">"SHAR"</span></span>,<br>                "<span class="hljs-attribute">sender_charges</span>": <span class="hljs-value">[<br>                    {<br>                        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"5.00"</span></span>,<br>                        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span><br>                    </span>},<br>                    {<br>                        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"10.00"</span></span>,<br>                        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>                    </span>}<br>                ]</span>,<br>                "<span class="hljs-attribute">receiver_charges_amount</span>": <span class="hljs-value"><span class="hljs-string">"1.00"</span></span>,<br>                "<span class="hljs-attribute">receiver_charges_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span></span>,<br>            "<span class="hljs-attribute">debtor_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"EJ Brown Black"</span></span>,<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"GB29XABC10161234567801"</span></span>,<br>                "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"IBAN"</span></span>,<br>                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10 Debtor Crescent Sourcetown NE1"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"203301"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Emelia Jane Brown"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">end_to_end_reference</span>": <span class="hljs-value"><span class="hljs-string">"Wil piano Jan"</span></span>,<br>            "<span class="hljs-attribute">fx</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">contract_reference</span>": <span class="hljs-value"><span class="hljs-string">"FX123"</span></span>,<br>                "<span class="hljs-attribute">exchange_rate</span>": <span class="hljs-value"><span class="hljs-string">"2.00000"</span></span>,<br>                "<span class="hljs-attribute">original_amount</span>": <span class="hljs-value"><span class="hljs-string">"200.42"</span></span>,<br>                "<span class="hljs-attribute">original_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">numeric_reference</span>": <span class="hljs-value"><span class="hljs-string">"1002001"</span></span>,<br>            "<span class="hljs-attribute">payment_id</span>": <span class="hljs-value"><span class="hljs-string">"123456789012345678"</span></span>,<br>            "<span class="hljs-attribute">payment_purpose</span>": <span class="hljs-value"><span class="hljs-string">"Paying for goods/services"</span></span>,<br>            "<span class="hljs-attribute">payment_scheme</span>": <span class="hljs-value"><span class="hljs-string">"FPS"</span></span>,<br>            "<span class="hljs-attribute">payment_type</span>": <span class="hljs-value"><span class="hljs-string">"Credit"</span></span>,<br>            "<span class="hljs-attribute">processing_date</span>": <span class="hljs-value"><span class="hljs-string">"2017-01-18"</span></span>,<br>            "<span class="hljs-attribute">reference</span>": <span class="hljs-value"><span class="hljs-string">"Payment for Em's piano lessons"</span></span>,<br>            "<span class="hljs-attribute">scheme_payment_sub_type</span>": <span class="hljs-value"><span class="hljs-string">"InternetBanking"</span></span>,<br>            "<span class="hljs-attribute">scheme_payment_type</span>": <span class="hljs-value"><span class="hljs-string">"ImmediatePayment"</span></span>,<br>            "<span class="hljs-attribute">sponsor_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"56781234"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"123123"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span><br>            </span>}<br>        </span>}<br>    </span>}</span>,<br>    "<span class="hljs-attribute">links</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">self</span>": <span class="hljs-value"><span class="hljs-string">"https://api.test.gopaytest.tech/v1/payments/cca3b50b-4acb-43dd-8465-8e7d6eac2cac"</span><br>    </span>}<br></span>}</pre>
+                                                    </div>
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Payment">Payment</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                                    <div class="col-md-12">
+                                                        <section class="sw-response-headers">
+                                                            <table class="table">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="sw-response-header-name"></th>
+                                                                    <th class="sw-response-header-description"></th>
+                                                                    <th class="sw-response-header-data-type"></th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                        <tr class="sw-response-header-Location">
+                                                                            <td>
+                                                                                Location
+                                                                            <td></td>
+                                                                            <td>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </section>
+                                                    </div>
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 400</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-500">
+                                        500 Internal Server Error
+                                    
+                                    </dt>
+                                    <dd class="sw-response-500">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 500</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--payments--paymentId-"></span>
+            <div id="operation--payments--paymentId--delete" class="swagger--panel-operation-delete panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Delete a Payment</div>
+                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/payments/{paymentId}</strong></h3>
+                        Tags:
+                            <a href="#tag-Payments">Payments</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Deletes a Payment</p>
+            
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                paymentId
+                                            </td>
+                                            <td><p>Identifier of the Payment</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                </p>
+                            
+                            <dl>
+                                    <dt class="sw-response-204">
+                                        204 No Content
+                                    
+                                    </dt>
+                                    <dd class="sw-response-204">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 204</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 400</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 404</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-500">
+                                        500 Internal Server Error
+                                    
+                                    </dt>
+                                    <dd class="sw-response-500">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 500</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--payments--paymentId--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Load an individual Payment</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/payments/{paymentId}</strong></h3>
+                        Tags:
+                            <a href="#tag-Payments">Payments</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Loads a Payment</p>
+            
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                paymentId
+                                            </td>
+                                            <td><p>Identifier of the Payment</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                </p>
+                            
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 200</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-6 sw-response-examples">
+                                                        <div class="label label-default">Example for application/json</div>
+                                                        <pre>{<br>    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Payment"</span></span>,<br>        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"ee761e4b-2b5a-411c-84c7-1ac1d48854fe"</span></span>,<br>        "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,<br>        "<span class="hljs-attribute">organisation_id</span>": <span class="hljs-value"><span class="hljs-string">"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb"</span></span>,<br>        "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{<br>            "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"100.21"</span></span>,<br>            "<span class="hljs-attribute">beneficiary_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"W Owens"</span></span>,<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"31926819"</span></span>,<br>                "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"BBAN"</span></span>,<br>                "<span class="hljs-attribute">account_type</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,<br>                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"1 The Beneficiary Localtown SE2"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"403000"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wilfred Jeremiah Owens"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">charges_information</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">bearer_code</span>": <span class="hljs-value"><span class="hljs-string">"SHAR"</span></span>,<br>                "<span class="hljs-attribute">sender_charges</span>": <span class="hljs-value">[<br>                    {<br>                        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"5.00"</span></span>,<br>                        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span><br>                    </span>},<br>                    {<br>                        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"10.00"</span></span>,<br>                        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>                    </span>}<br>                ]</span>,<br>                "<span class="hljs-attribute">receiver_charges_amount</span>": <span class="hljs-value"><span class="hljs-string">"1.00"</span></span>,<br>                "<span class="hljs-attribute">receiver_charges_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span></span>,<br>            "<span class="hljs-attribute">debtor_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"EJ Brown Black"</span></span>,<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"GB29XABC10161234567801"</span></span>,<br>                "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"IBAN"</span></span>,<br>                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10 Debtor Crescent Sourcetown NE1"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"203301"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Emelia Jane Brown"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">end_to_end_reference</span>": <span class="hljs-value"><span class="hljs-string">"Wil piano Jan"</span></span>,<br>            "<span class="hljs-attribute">fx</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">contract_reference</span>": <span class="hljs-value"><span class="hljs-string">"FX123"</span></span>,<br>                "<span class="hljs-attribute">exchange_rate</span>": <span class="hljs-value"><span class="hljs-string">"2.00000"</span></span>,<br>                "<span class="hljs-attribute">original_amount</span>": <span class="hljs-value"><span class="hljs-string">"200.42"</span></span>,<br>                "<span class="hljs-attribute">original_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">numeric_reference</span>": <span class="hljs-value"><span class="hljs-string">"1002001"</span></span>,<br>            "<span class="hljs-attribute">payment_id</span>": <span class="hljs-value"><span class="hljs-string">"123456789012345678"</span></span>,<br>            "<span class="hljs-attribute">payment_purpose</span>": <span class="hljs-value"><span class="hljs-string">"Paying for goods/services"</span></span>,<br>            "<span class="hljs-attribute">payment_scheme</span>": <span class="hljs-value"><span class="hljs-string">"FPS"</span></span>,<br>            "<span class="hljs-attribute">payment_type</span>": <span class="hljs-value"><span class="hljs-string">"Credit"</span></span>,<br>            "<span class="hljs-attribute">processing_date</span>": <span class="hljs-value"><span class="hljs-string">"2017-01-18"</span></span>,<br>            "<span class="hljs-attribute">reference</span>": <span class="hljs-value"><span class="hljs-string">"Payment for Em's piano lessons"</span></span>,<br>            "<span class="hljs-attribute">scheme_payment_sub_type</span>": <span class="hljs-value"><span class="hljs-string">"InternetBanking"</span></span>,<br>            "<span class="hljs-attribute">scheme_payment_type</span>": <span class="hljs-value"><span class="hljs-string">"ImmediatePayment"</span></span>,<br>            "<span class="hljs-attribute">sponsor_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"56781234"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"123123"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span><br>            </span>}<br>        </span>}<br>    </span>}</span>,<br>    "<span class="hljs-attribute">links</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">self</span>": <span class="hljs-value"><span class="hljs-string">"https://api.test.gopaytest.tech/v1/payments/ee761e4b-2b5a-411c-84c7-1ac1d48854fe"</span><br>    </span>}<br></span>}</pre>
+                                                    </div>
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Payment">Payment</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 400</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 404</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-500">
+                                        500 Internal Server Error
+                                    
+                                    </dt>
+                                    <dd class="sw-response-500">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 500</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--payments--paymentId--put" class="swagger--panel-operation-put panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Update a Payment</div>
+                    <h3 class="panel-title"><span class="operation-name">PUT</span> <strong>/payments/{paymentId}</strong></h3>
+                        Tags:
+                            <a href="#tag-Payments">Payments</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Stores a Payment</p>
+            
+                    </section>
+            
+                        
+                            <section class="sw-request-body">
+                                
+                                    <p><a href="#sw-default-consumes">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                    </p>
+                                                <div class="row">
+                                            <div class="col-md-6">
+                                                <p></p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+                                            <a class="json-schema-ref" href="#/definitions/Payment">Payment</a>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>        
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                paymentId
+                                            </td>
+                                            <td><p>Identifier of the Payment</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                </p>
+                            
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 200</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-6 sw-response-examples">
+                                                        <div class="label label-default">Example for application/json</div>
+                                                        <pre>{<br>    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Payment"</span></span>,<br>        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"cca3b50b-4acb-43dd-8465-8e7d6eac2cac"</span></span>,<br>        "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,<br>        "<span class="hljs-attribute">organisation_id</span>": <span class="hljs-value"><span class="hljs-string">"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb"</span></span>,<br>        "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{<br>            "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"100.21"</span></span>,<br>            "<span class="hljs-attribute">beneficiary_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"W Owens"</span></span>,<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"31926819"</span></span>,<br>                "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"BBAN"</span></span>,<br>                "<span class="hljs-attribute">account_type</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,<br>                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"1 The Beneficiary Localtown SE2"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"403000"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wilfred Jeremiah Owens"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">charges_information</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">bearer_code</span>": <span class="hljs-value"><span class="hljs-string">"SHAR"</span></span>,<br>                "<span class="hljs-attribute">sender_charges</span>": <span class="hljs-value">[<br>                    {<br>                        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"5.00"</span></span>,<br>                        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span><br>                    </span>},<br>                    {<br>                        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"10.00"</span></span>,<br>                        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>                    </span>}<br>                ]</span>,<br>                "<span class="hljs-attribute">receiver_charges_amount</span>": <span class="hljs-value"><span class="hljs-string">"1.00"</span></span>,<br>                "<span class="hljs-attribute">receiver_charges_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"GBP"</span></span>,<br>            "<span class="hljs-attribute">debtor_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_name</span>": <span class="hljs-value"><span class="hljs-string">"EJ Brown Black"</span></span>,<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"GB29XABC10161234567801"</span></span>,<br>                "<span class="hljs-attribute">account_number_code</span>": <span class="hljs-value"><span class="hljs-string">"IBAN"</span></span>,<br>                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10 Debtor Crescent Sourcetown NE1"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"203301"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span></span>,<br>                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Emelia Jane Brown"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">end_to_end_reference</span>": <span class="hljs-value"><span class="hljs-string">"Wil piano Jan"</span></span>,<br>            "<span class="hljs-attribute">fx</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">contract_reference</span>": <span class="hljs-value"><span class="hljs-string">"FX123"</span></span>,<br>                "<span class="hljs-attribute">exchange_rate</span>": <span class="hljs-value"><span class="hljs-string">"2.00000"</span></span>,<br>                "<span class="hljs-attribute">original_amount</span>": <span class="hljs-value"><span class="hljs-string">"200.42"</span></span>,<br>                "<span class="hljs-attribute">original_currency</span>": <span class="hljs-value"><span class="hljs-string">"USD"</span><br>            </span>}</span>,<br>            "<span class="hljs-attribute">numeric_reference</span>": <span class="hljs-value"><span class="hljs-string">"1002001"</span></span>,<br>            "<span class="hljs-attribute">payment_id</span>": <span class="hljs-value"><span class="hljs-string">"123456789012345678"</span></span>,<br>            "<span class="hljs-attribute">payment_purpose</span>": <span class="hljs-value"><span class="hljs-string">"Paying for goods/services"</span></span>,<br>            "<span class="hljs-attribute">payment_scheme</span>": <span class="hljs-value"><span class="hljs-string">"FPS"</span></span>,<br>            "<span class="hljs-attribute">payment_type</span>": <span class="hljs-value"><span class="hljs-string">"Credit"</span></span>,<br>            "<span class="hljs-attribute">processing_date</span>": <span class="hljs-value"><span class="hljs-string">"2017-01-18"</span></span>,<br>            "<span class="hljs-attribute">reference</span>": <span class="hljs-value"><span class="hljs-string">"Payment for Em's piano lessons"</span></span>,<br>            "<span class="hljs-attribute">scheme_payment_sub_type</span>": <span class="hljs-value"><span class="hljs-string">"InternetBanking"</span></span>,<br>            "<span class="hljs-attribute">scheme_payment_type</span>": <span class="hljs-value"><span class="hljs-string">"ImmediatePayment"</span></span>,<br>            "<span class="hljs-attribute">sponsor_party</span>": <span class="hljs-value">{<br>                "<span class="hljs-attribute">account_number</span>": <span class="hljs-value"><span class="hljs-string">"56781234"</span></span>,<br>                "<span class="hljs-attribute">bank_id</span>": <span class="hljs-value"><span class="hljs-string">"123123"</span></span>,<br>                "<span class="hljs-attribute">bank_id_code</span>": <span class="hljs-value"><span class="hljs-string">"GBDSC"</span><br>            </span>}<br>        </span>}<br>    </span>}</span>,<br>    "<span class="hljs-attribute">links</span>": <span class="hljs-value">{<br>        "<span class="hljs-attribute">self</span>": <span class="hljs-value"><span class="hljs-string">"https://api.test.gopaytest.tech/v1/payments/cca3b50b-4acb-43dd-8465-8e7d6eac2cac"</span><br>    </span>}<br></span>}</pre>
+                                                    </div>
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Payment">Payment</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 400</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 404</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-409">
+                                        409 Conflict
+                                    
+                                    </dt>
+                                    <dd class="sw-response-409">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>An update has been issued with stale data, the client should fetch the updated resource and apply the changes again.</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-500">
+                                        500 Internal Server Error
+                                    
+                                    </dt>
+                                    <dd class="sw-response-500">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Status 500</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+    
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Error" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Error"></a>Error:
+                                    <span class="json-property-type">
+                <span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                                <section class="json-schema-description">
+                                    <p>This general error structure is used throughout this API.</p>
+                            
+                                </section>
+                                <section class="json-schema-example">
+                                    <pre><code class="lang-json"><span class="hljs-string">&quot;{\n  \&quot;code\&quot;: 400,\n  \&quot;description\&quot;: \&quot;Bad query parameter [$size]: Invalid integer value [abc]\&quot;,\n  \&quot;reasonPhrase\&quot;: \&quot;Bad Request\&quot;\n}&quot;</span>
+                            </code></pre>
+                            
+                                </section>
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="code">
+                                                    <span class="json-property-name">code:</span>
+                                                    
+                                                    <span class="json-property-type">integer</span>
+                                                    <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 400 ≤ x ≤ 599 }</span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="description">
+                                                    <span class="json-property-name">description:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                            <section class="json-schema-example">
+                                                                <pre><code class="lang-json"><span class="hljs-string">&quot;Bad query parameter [$size]: Invalid integer value [abc]&quot;</span>
+                                                        </code></pre>
+                                                        
+                                                            </section>
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="reasonPhrase">
+                                                    <span class="json-property-name">reasonPhrase:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                            <section class="json-schema-example">
+                                                                <pre><code class="lang-json"><span class="hljs-string">&quot;Bad Request&quot;</span>
+                                                        </code></pre>
+                                                        
+                                                            </section>
+                                                        
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>        
+                <div id="definition-Payment" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Payment"></a>Payment:
+                                    <span class="json-property-type">
+                <span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                                <section class="json-schema-description">
+                                    <p>A representation of a Payment.</p>
+                            
+                                </section>
+                                <section class="json-schema-example">
+                                    <pre><code class="lang-json"><span class="hljs-string">&quot;{\&quot;type\&quot;:\&quot;Payment\&quot;,\&quot;id\&quot;:\&quot;4ee3a8d8-ca7b-4290-a52c-dd5b6165ec43\&quot;,\&quot;version\&quot;:0,\&quot;organisation_id\&quot;:\&quot;743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb\&quot;,\&quot;attributes\&quot;:{\&quot;amount\&quot;:\&quot;100.21\&quot;,\&quot;beneficiary_party\&quot;:{\&quot;account_name\&quot;:\&quot;W Owens\&quot;,\&quot;account_number\&quot;:\&quot;31926819\&quot;,\&quot;account_number_code\&quot;:\&quot;BBAN\&quot;,\&quot;account_type\&quot;:0,\&quot;address\&quot;:\&quot;1 The Beneficiary Localtown SE2\&quot;,\&quot;bank_id\&quot;:\&quot;403000\&quot;,\&quot;bank_id_code\&quot;:\&quot;GBDSC\&quot;,\&quot;name\&quot;:\&quot;Wilfred Jeremiah Owens\&quot;},\&quot;charges_information\&quot;:{\&quot;bearer_code\&quot;:\&quot;SHAR\&quot;,\&quot;sender_charges\&quot;:[{\&quot;amount\&quot;:\&quot;5.00\&quot;,\&quot;currency\&quot;:\&quot;GBP\&quot;},{\&quot;amount\&quot;:\&quot;10.00\&quot;,\&quot;currency\&quot;:\&quot;USD\&quot;}],\&quot;receiver_charges_amount\&quot;:\&quot;1.00\&quot;,\&quot;receiver_charges_currency\&quot;:\&quot;USD\&quot;},\&quot;currency\&quot;:\&quot;GBP\&quot;,\&quot;debtor_party\&quot;:{\&quot;account_name\&quot;:\&quot;EJ Brown Black\&quot;,\&quot;account_number\&quot;:\&quot;GB29XABC10161234567801\&quot;,\&quot;account_number_code\&quot;:\&quot;IBAN\&quot;,\&quot;address\&quot;:\&quot;10 Debtor Crescent Sourcetown NE1\&quot;,\&quot;bank_id\&quot;:\&quot;203301\&quot;,\&quot;bank_id_code\&quot;:\&quot;GBDSC\&quot;,\&quot;name\&quot;:\&quot;Emelia Jane Brown\&quot;},\&quot;end_to_end_reference\&quot;:\&quot;Wil piano Jan\&quot;,\&quot;fx\&quot;:{\&quot;contract_reference\&quot;:\&quot;FX123\&quot;,\&quot;exchange_rate\&quot;:\&quot;2.00000\&quot;,\&quot;original_amount\&quot;:\&quot;200.42\&quot;,\&quot;original_currency\&quot;:\&quot;USD\&quot;},\&quot;numeric_reference\&quot;:\&quot;1002001\&quot;,\&quot;payment_id\&quot;:\&quot;123456789012345678\&quot;,\&quot;payment_purpose\&quot;:\&quot;Paying for goods/services\&quot;,\&quot;payment_scheme\&quot;:\&quot;FPS\&quot;,\&quot;payment_type\&quot;:\&quot;Credit\&quot;,\&quot;processing_date\&quot;:\&quot;2017-01-18\&quot;,\&quot;reference\&quot;:\&quot;Payment for Em&apos;s piano lessons\&quot;,\&quot;scheme_payment_sub_type\&quot;:\&quot;InternetBanking\&quot;,\&quot;scheme_payment_type\&quot;:\&quot;ImmediatePayment\&quot;,\&quot;sponsor_party\&quot;:{\&quot;account_number\&quot;:\&quot;56781234\&quot;,\&quot;bank_id\&quot;:\&quot;123123\&quot;,\&quot;bank_id_code\&quot;:\&quot;GBDSC\&quot;}}}&quot;</span>
+                            </code></pre>
+                            
+                                </section>
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="type">
+                                                    <span class="json-property-name">type:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                    <span class="json-property-enum-item">Payment</span>
+                                                                
+                                                            }
+                                                            </span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="id">
+                                                    <span class="json-property-name">id:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    <p>Auto-generated primary key field</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                            <section class="json-schema-example">
+                                                                <pre><code class="lang-json"><span class="hljs-string">&quot;0e8ffb10-ad98-11e6-bf2e-47644ada7c0f&quot;</span>
+                                                        </code></pre>
+                                                        
+                                                            </section>
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="version">
+                                                    <span class="json-property-name">version:</span>
+                                                    
+                                                    <span class="json-property-type">number</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="organisation_id">
+                                                    <span class="json-property-name">organisation_id:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                            <section class="json-schema-example">
+                                                                <pre><code class="lang-json"><span class="hljs-string">&quot;743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb&quot;</span>
+                                                        </code></pre>
+                                                        
+                                                            </section>
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="attributes">
+                                                    <span class="json-property-name">attributes:</span>
+                                                    
+                                                    <span class="json-property-type">object</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                                <section class="json-schema-properties">
+                                                                    <dl>
+                                                                            <dt data-property-name="amount">
+                                                                                <span class="json-property-name">amount:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                        <section class="json-schema-example">
+                                                                                            <pre><code class="lang-json"><span class="hljs-string">&quot;100.21&quot;</span>
+                                                                                    </code></pre>
+                                                                                    
+                                                                                        </section>
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="beneficiary_party">
+                                                                                <span class="json-property-name">beneficiary_party:</span>
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                            <section class="json-schema-properties">
+                                                                                                <dl>
+                                                                                                        <dt data-property-name="account_name">
+                                                                                                            <span class="json-property-name">account_name:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="account_number">
+                                                                                                            <span class="json-property-name">account_number:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="account_number_code">
+                                                                                                            <span class="json-property-name">account_number_code:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="account_type">
+                                                                                                            <span class="json-property-name">account_type:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">integer</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="address">
+                                                                                                            <span class="json-property-name">address:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="bank_id">
+                                                                                                            <span class="json-property-name">bank_id:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="bank_id_code">
+                                                                                                            <span class="json-property-name">bank_id_code:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="name">
+                                                                                                            <span class="json-property-name">name:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                </dl>
+                                                                                            </section>
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="charges_information">
+                                                                                <span class="json-property-name">charges_information:</span>
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                            <section class="json-schema-properties">
+                                                                                                <dl>
+                                                                                                        <dt data-property-name="bearer_code">
+                                                                                                            <span class="json-property-name">bearer_code:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                    <section class="json-schema-example">
+                                                                                                                        <pre><code class="lang-json"><span class="hljs-string">&quot;SHAR&quot;</span>
+                                                                                                                </code></pre>
+                                                                                                                
+                                                                                                                    </section>
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="sender_charges">
+                                                                                                            <span class="json-property-name">sender_charges:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">object[]</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                                                <section class="json-schema-array-items">
+                                                                                                                                    
+                                                                                                                                    <span class="json-property-type">object</span>
+                                                                                                                                    <span class="json-property-range" title="Value limits"></span>
+                                                                                                                                    
+                                                                                                                                    <div class="json-inner-schema">
+                                                                                                                                        
+                                                                                                                                                <section class="json-schema-properties">
+                                                                                                                                                    <dl>
+                                                                                                                                                            <dt data-property-name="amount">
+                                                                                                                                                                <span class="json-property-name">amount:</span>
+                                                                                                                                                                
+                                                                                                                                                                <span class="json-property-type">string</span>
+                                                                                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                                                                                
+                                                                                                                                                                        <span class="json-property-default-value">5.00</span>
+                                                                                                                                                                    <span class="json-property-required"></span>
+                                                                                                                                                            </dt>
+                                                                                                                                                            <dd>
+                                                                                                                                                                
+                                                                                                                                                                <div class="json-inner-schema">
+                                                                                                                                                                    
+                                                                                                                                                                </div>
+                                                                                                                                                            </dd>
+                                                                                                                                                            <dt data-property-name="currency">
+                                                                                                                                                                <span class="json-property-name">currency:</span>
+                                                                                                                                                                
+                                                                                                                                                                <span class="json-property-type">string</span>
+                                                                                                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                                                                                                
+                                                                                                                                                                    <span class="json-property-required"></span>
+                                                                                                                                                            </dt>
+                                                                                                                                                            <dd>
+                                                                                                                                                                
+                                                                                                                                                                <div class="json-inner-schema">
+                                                                                                                                                                        <section class="json-schema-example">
+                                                                                                                                                                            <pre><code class="lang-json"><span class="hljs-string">&quot;GBP&quot;</span>
+                                                                                                                                                                    </code></pre>
+                                                                                                                                                                    
+                                                                                                                                                                        </section>
+                                                                                                                                                                    
+                                                                                                                                                                </div>
+                                                                                                                                                            </dd>
+                                                                                                                                                    </dl>
+                                                                                                                                                </section>
+                                                                                                                                    </div>
+                                                                                                                                </section>                </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="receiver_charges_amount">
+                                                                                                            <span class="json-property-name">receiver_charges_amount:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                    <span class="json-property-default-value">1.00</span>
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="receiver_charges_currency">
+                                                                                                            <span class="json-property-name">receiver_charges_currency:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                    <section class="json-schema-example">
+                                                                                                                        <pre><code class="lang-json"><span class="hljs-string">&quot;GBP&quot;</span>
+                                                                                                                </code></pre>
+                                                                                                                
+                                                                                                                    </section>
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                </dl>
+                                                                                            </section>
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="currency">
+                                                                                <span class="json-property-name">currency:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                        <section class="json-schema-example">
+                                                                                            <pre><code class="lang-json"><span class="hljs-string">&quot;GBP&quot;</span>
+                                                                                    </code></pre>
+                                                                                    
+                                                                                        </section>
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="debtor_party">
+                                                                                <span class="json-property-name">debtor_party:</span>
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                            <section class="json-schema-properties">
+                                                                                                <dl>
+                                                                                                        <dt data-property-name="account_name">
+                                                                                                            <span class="json-property-name">account_name:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="account_number">
+                                                                                                            <span class="json-property-name">account_number:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="account_number_code">
+                                                                                                            <span class="json-property-name">account_number_code:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="address">
+                                                                                                            <span class="json-property-name">address:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="bank_id">
+                                                                                                            <span class="json-property-name">bank_id:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="bank_id_code">
+                                                                                                            <span class="json-property-name">bank_id_code:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="name">
+                                                                                                            <span class="json-property-name">name:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                </dl>
+                                                                                            </section>
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="end_to_end_reference">
+                                                                                <span class="json-property-name">end_to_end_reference:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="fx">
+                                                                                <span class="json-property-name">fx:</span>
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                            <section class="json-schema-properties">
+                                                                                                <dl>
+                                                                                                        <dt data-property-name="contract_reference">
+                                                                                                            <span class="json-property-name">contract_reference:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="exchange_rate">
+                                                                                                            <span class="json-property-name">exchange_rate:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                    <section class="json-schema-example">
+                                                                                                                        <pre><code class="lang-json"><span class="hljs-string">&quot;2.00000&quot;</span>
+                                                                                                                </code></pre>
+                                                                                                                
+                                                                                                                    </section>
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="original_amount">
+                                                                                                            <span class="json-property-name">original_amount:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                    <section class="json-schema-example">
+                                                                                                                        <pre><code class="lang-json"><span class="hljs-string">&quot;200.42&quot;</span>
+                                                                                                                </code></pre>
+                                                                                                                
+                                                                                                                    </section>
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="original_currency">
+                                                                                                            <span class="json-property-name">original_currency:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                    <section class="json-schema-example">
+                                                                                                                        <pre><code class="lang-json"><span class="hljs-string">&quot;GBP&quot;</span>
+                                                                                                                </code></pre>
+                                                                                                                
+                                                                                                                    </section>
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                </dl>
+                                                                                            </section>
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="numeric_reference">
+                                                                                <span class="json-property-name">numeric_reference:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="payment_id">
+                                                                                <span class="json-property-name">payment_id:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="payment_purpose">
+                                                                                <span class="json-property-name">payment_purpose:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="payment_scheme">
+                                                                                <span class="json-property-name">payment_scheme:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="payment_type">
+                                                                                <span class="json-property-name">payment_type:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="processing_date">
+                                                                                <span class="json-property-name">processing_date:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>    <span class="json-property-format">(date)</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                        <section class="json-schema-example">
+                                                                                            <pre><code class="lang-json"><span class="hljs-string">&quot;2017-01-18&quot;</span>
+                                                                                    </code></pre>
+                                                                                    
+                                                                                        </section>
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="reference">
+                                                                                <span class="json-property-name">reference:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="scheme_payment_sub_type">
+                                                                                <span class="json-property-name">scheme_payment_sub_type:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                        <section class="json-schema-example">
+                                                                                            <pre><code class="lang-json"><span class="hljs-string">&quot;InternetBanking&quot;</span>
+                                                                                    </code></pre>
+                                                                                    
+                                                                                        </section>
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="scheme_payment_type">
+                                                                                <span class="json-property-name">scheme_payment_type:</span>
+                                                                                
+                                                                                <span class="json-property-type">string</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                    <span class="json-property-required"></span>
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                        <section class="json-schema-example">
+                                                                                            <pre><code class="lang-json"><span class="hljs-string">&quot;ImmediatePayment&quot;</span>
+                                                                                    </code></pre>
+                                                                                    
+                                                                                        </section>
+                                                                                    
+                                                                                </div>
+                                                                            </dd>
+                                                                            <dt data-property-name="sponsor_party">
+                                                                                <span class="json-property-name">sponsor_party:</span>
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                            </dt>
+                                                                            <dd>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                            <section class="json-schema-properties">
+                                                                                                <dl>
+                                                                                                        <dt data-property-name="account_number">
+                                                                                                            <span class="json-property-name">account_number:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="bank_id">
+                                                                                                            <span class="json-property-name">bank_id:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                        <dt data-property-name="bank_id_code">
+                                                                                                            <span class="json-property-name">bank_id_code:</span>
+                                                                                                            
+                                                                                                            <span class="json-property-type">string</span>
+                                                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                                                            
+                                                                                                                <span class="json-property-required"></span>
+                                                                                                        </dt>
+                                                                                                        <dd>
+                                                                                                            
+                                                                                                            <div class="json-inner-schema">
+                                                                                                                
+                                                                                                            </div>
+                                                                                                        </dd>
+                                                                                                </dl>
+                                                                                            </section>
+                                                                                </div>
+                                                                            </dd>
+                                                                    </dl>
+                                                                </section>
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>
+</div>
+<script src="bundle.js" type="application/javascript"></script>
+</body>
+</html>

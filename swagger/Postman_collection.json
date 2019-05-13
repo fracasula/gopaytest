@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "bd331525-5d60-4469-967f-947eaf62d76c",
+		"name": "gopaytest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Payments list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gopaytest-api}}/v1/payments",
+					"host": [
+						"{{gopaytest-api}}"
+					],
+					"path": [
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": \"Payment\",\n\t\"organisation_id\": \"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb\",\n\t\"attributes\": {\n\t\t\"amount\": \"100.21\",\n\t\t\"beneficiary_party\": {\n\t\t\t\"account_name\": \"W Owens\",\n\t\t\t\"account_number\": \"31926819\",\n\t\t\t\"account_number_code\": \"BBAN\",\n\t\t\t\"account_type\": 0,\n\t\t\t\"address\": \"1 The Beneficiary Localtown SE2\",\n\t\t\t\"bank_id\": \"403000\",\n\t\t\t\"bank_id_code\": \"GBDSC\",\n\t\t\t\"name\": \"Wilfred Jeremiah Owens\"\n\t\t},\n\t\t\"charges_information\": {\n\t\t\t\"bearer_code\": \"SHAR\",\n\t\t\t\"sender_charges\": [\n\t\t\t\t{\n\t\t\t\t\t\"amount\": \"5.00\",\n\t\t\t\t\t\"currency\": \"GBP\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"amount\": \"10.00\",\n\t\t\t\t\t\"currency\": \"USD\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"receiver_charges_amount\": \"1.00\",\n\t\t\t\"receiver_charges_currency\": \"USD\"\n\t\t},\n\t\t\"currency\": \"GBP\",\n\t\t\"debtor_party\": {\n\t\t\t\"account_name\": \"EJ Brown Black\",\n\t\t\t\"account_number\": \"GB29XABC10161234567801\",\n\t\t\t\"account_number_code\": \"IBAN\",\n\t\t\t\"address\": \"10 Debtor Crescent Sourcetown NE1\",\n\t\t\t\"bank_id\": \"203301\",\n\t\t\t\"bank_id_code\": \"GBDSC\",\n\t\t\t\"name\": \"Emelia Jane Brown\"\n\t\t},\n\t\t\"end_to_end_reference\": \"Wil piano Jan\",\n\t\t\"fx\": {\n\t\t\t\"contract_reference\": \"FX123\",\n\t\t\t\"exchange_rate\": \"2.00000\",\n\t\t\t\"original_amount\": \"200.42\",\n\t\t\t\"original_currency\": \"USD\"\n\t\t},\n\t\t\"numeric_reference\": \"1002001\",\n\t\t\"payment_id\": \"123456789012345678\",\n\t\t\"payment_purpose\": \"Paying for goods/services\",\n\t\t\"payment_scheme\": \"FPS\",\n\t\t\"payment_type\": \"Credit\",\n\t\t\"processing_date\": \"2017-01-18\",\n\t\t\"reference\": \"Payment for Em's piano lessons\",\n\t\t\"scheme_payment_sub_type\": \"InternetBanking\",\n\t\t\"scheme_payment_type\": \"ImmediatePayment\",\n\t\t\"sponsor_party\": {\n\t\t\t\"account_number\": \"56781234\",\n\t\t\t\"bank_id\": \"123123\",\n\t\t\t\"bank_id_code\": \"GBDSC\"\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{gopaytest-api}}/v1/payments",
+					"host": [
+						"{{gopaytest-api}}"
+					],
+					"path": [
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update payment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": \"Payment\",\n\t\"version\": 1,\n\t\"organisation_id\": \"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb\",\n\t\"attributes\": {\n\t\t\"amount\": \"201.74\",\n\t\t\"beneficiary_party\": {\n\t\t\t\"account_name\": \"W Owensss\",\n\t\t\t\"account_number\": \"31926819\",\n\t\t\t\"account_number_code\": \"BBAN\",\n\t\t\t\"account_type\": 0,\n\t\t\t\"address\": \"1 The Beneficiary Localtown SE2\",\n\t\t\t\"bank_id\": \"403000\",\n\t\t\t\"bank_id_code\": \"GBDSC\",\n\t\t\t\"name\": \"Wilfred Jeremiah Owens\"\n\t\t},\n\t\t\"charges_information\": {\n\t\t\t\"bearer_code\": \"SHAR\",\n\t\t\t\"sender_charges\": [\n\t\t\t\t{\n\t\t\t\t\t\"amount\": \"5.00\",\n\t\t\t\t\t\"currency\": \"GBP\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"amount\": \"10.00\",\n\t\t\t\t\t\"currency\": \"USD\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"receiver_charges_amount\": \"1.00\",\n\t\t\t\"receiver_charges_currency\": \"USD\"\n\t\t},\n\t\t\"currency\": \"GBP\",\n\t\t\"debtor_party\": {\n\t\t\t\"account_name\": \"EJ Brown Black\",\n\t\t\t\"account_number\": \"GB29XABC10161234567801\",\n\t\t\t\"account_number_code\": \"IBAN\",\n\t\t\t\"address\": \"10 Debtor Crescent Sourcetown NE1\",\n\t\t\t\"bank_id\": \"203301\",\n\t\t\t\"bank_id_code\": \"GBDSC\",\n\t\t\t\"name\": \"Emelia Jane Brown\"\n\t\t},\n\t\t\"end_to_end_reference\": \"Wil piano Jan\",\n\t\t\"fx\": {\n\t\t\t\"contract_reference\": \"FX123\",\n\t\t\t\"exchange_rate\": \"2.00000\",\n\t\t\t\"original_amount\": \"200.42\",\n\t\t\t\"original_currency\": \"USD\"\n\t\t},\n\t\t\"numeric_reference\": \"1002001\",\n\t\t\"payment_id\": \"123456789012345678\",\n\t\t\"payment_purpose\": \"Paying for goods/services\",\n\t\t\"payment_scheme\": \"FPS\",\n\t\t\"payment_type\": \"Credit\",\n\t\t\"processing_date\": \"2017-01-18\",\n\t\t\"reference\": \"Payment for Em's piano lessons\",\n\t\t\"scheme_payment_sub_type\": \"InternetBanking\",\n\t\t\"scheme_payment_type\": \"ImmediatePayment\",\n\t\t\"sponsor_party\": {\n\t\t\t\"account_number\": \"56781234\",\n\t\t\t\"bank_id\": \"123123\",\n\t\t\t\"bank_id_code\": \"GBDSC\"\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{gopaytest-api}}/v1/payments/cb54d575-dfaf-4e05-8855-e3b88f542f4d",
+					"host": [
+						"{{gopaytest-api}}"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"cb54d575-dfaf-4e05-8855-e3b88f542f4d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gopaytest-api}}/v1/payments/fe9d869f-4cb7-4307-9b18-44f19b75b360",
+					"host": [
+						"{{gopaytest-api}}"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"fe9d869f-4cb7-4307-9b18-44f19b75b360"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete payment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gopaytest-api}}/v1/payments/7f36856b-e9e5-4b20-b9b9-2951919f1cec",
+					"host": [
+						"{{gopaytest-api}}"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"7f36856b-e9e5-4b20-b9b9-2951919f1cec"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
